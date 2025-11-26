@@ -7,7 +7,6 @@ pipeline {
     }
     tools {
         docker 'latest'
-        jdk 'your_jdk_version'
     }
     stages {
         stage('first stage') {
