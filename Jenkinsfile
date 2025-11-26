@@ -1,12 +1,16 @@
 pipeline {
     agent {
-        docker { image 'node:24.11.1-alpine3.22' }
+        label 'yourDockerAgentLabel'
+    }
+    environment {
+        SOME_ENV_VAR = 'some_value'
+    }
+    tools {
+        docker 'latest'
+        jdk 'your_jdk_version'
     }
     stages {
-        stage('Test') {
-            steps {
-                sh 'node --eval "console.log(process.platform,process.env.CI)"'
-            }
-        }
+        stage('first stage') {
+          sh("docker build .")
+       }
     }
-}
