@@ -7,6 +7,3 @@ services:
     ports:
       - "8888:8080"
       - "8889:8081"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80 
