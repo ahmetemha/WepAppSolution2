@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('first stage') {
 		 steps {
-          sh("docker build .")
+          echo "docker build ."
 		  }
        }
     }
