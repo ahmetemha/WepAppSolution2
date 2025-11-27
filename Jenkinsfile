@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('first stage') {
 		 steps {
-          echo "docker build ."
+          bat 'mvn clean package'
 		  }
        }
     }
