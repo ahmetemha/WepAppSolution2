@@ -4,3 +4,6 @@ services:
     build:
       context: .
       dockerfile: WebApplication2\Dockerfile
+    ports:
+    - "8888:8080"
+    - "8889:8081"
