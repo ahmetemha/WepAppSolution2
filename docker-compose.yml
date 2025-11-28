@@ -5,4 +5,13 @@ services:
       context: .
       dockerfile: WebApplication2\Dockerfile
     ports:
-      - "8888:8080"
+      - 8888:8080
+      - 8089:8081
+    environment:
+            - ASPNETCORE_URLS=https://+;http://+
+            - ASPNETCORE_HTTPS_PORTS=8081
+            - ASPNETCORE_Kestrel__Certificates__Default__Password=123456
+            - ASPNETCORE_Kestrel__Certificates__Default__Path=c:\https\aspnetapp.pfx
+    volumes:
+            - "$env:USERPROFILE\\.aspnet\\https:C:\\https\\"
+    
