@@ -13,6 +13,7 @@ namespace WebApplication2
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
             builder.Services.AddHostedService<DenemeService>();
             //builder.Services.AddScoped<IDeneme, Deneme>();
             var app = builder.Build();
@@ -24,11 +25,11 @@ namespace WebApplication2
                 app.UseSwaggerUI();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
-
+            
             app.MapControllers();
 
             app.Run();
